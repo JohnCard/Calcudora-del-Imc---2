@@ -20,6 +20,7 @@ def regs(param):
 nombre_usuario = input('Ingrese su Nombre: ')
 regs(nombre_usuario)
 
+
 apellido_paterno = input('Ingrese su apellido paterno (solo el paterno): ')
 apellido_materno = input('Ingrese su apellido materno (solo el materno): ')
 edad = input('Ingrese su Edad: ')
