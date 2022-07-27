@@ -1,5 +1,3 @@
 # Calcudora-del-Imc---2
-# Proyecto para indicar el indice de masa corporal
-Esta calculadora a parte de no permitir que ningun error se pase por alto, es constante hasta que el usuario ingrese de manera correcta todos los datos solicitados 
-para realizar correctamente el calculo de su imc para mostrarselo en pantalla y dependiendo el resultado de su imc, le dará una conclsuion de su situación actual
-para poder apoyarlo.
+# Reflexiones y comentarios:
+Para el Proceso de lo que fue este proyecto, conseguí un acercamiento a lo que fue mejorar mi pensamiento logico Para resolver problemas como programador, agregandole a la calculadora distintas funcionalidades dependiendo de el caso que se le presentara, por si el usuario llegase a ingresar mal o por error algun dato, ya sea de tipo str, int ó float
