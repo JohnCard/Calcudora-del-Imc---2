@@ -3,6 +3,7 @@
 #             pram = input(f'Ingrese correctamente su {pram_do} porfavor o no podremos continuar: ')
 #     return pram
 
+
 # def regs(param_prim, param_seg,):
 #     try:
 #         float(param_prim)
