@@ -1,5 +1,4 @@
 rb = 'ZXCVBMASDFGHJKLÑQWERTUIOP¨¨+*~[]^``/|¬°!"#$%&()=-_;:,zxcvbmasdfghjklñqwertuiop 1234567890.'
-
 def leer_params(pirm, let):
     ty = 0
     for hj in pirm:
