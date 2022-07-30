@@ -10,11 +10,11 @@ a = 'ZXCVBNMASDFGHJKLÑQWERTYUIOPzxcvbnmasdfghjklñqwertyuiop '; d = '¨¨+*~[]^
 # su imc y en el caso de que si, al terminar, preguntarle por si gusta calcular otro mas, aunque tambien esta 
 # modificada para el caso de si el usuario ingresa una respuesta invalida
 def ley_params(answer_seg):
-    while(answer_seg == 'y' or answer_seg == 'Y' or len(answer_seg) == 0 or tir_seg(answer_seg) > 0):
+    while(answer_seg == 'y' or answer_seg == 'Y' or len(answer_seg) == 0 or tir_seg(answer_seg) > 0 or ('yy' in answer_seg) or ('YY' in answer_seg) or ('nn' in answer_seg) or ('NN' in answer_seg)):
         if(answer_seg == 'y' or answer_seg == 'Y'):
             CalC_IMC()
             answer_seg = input('\n Desea calcular otro indice (Y/N): ')
-        elif(tir_seg(answer_seg) > 0):
+        elif(tir_seg(answer_seg) > 0 or ('yy' in answer_seg) or ('YY' in answer_seg) or ('nn' in answer_seg) or ('NN' in answer_seg)):
             answer_seg = input('Respuesta ¡INCORRECTA!, desea intentarlo de nuevo (Y/N): ')
         elif(len(answer_seg) == 0):
             answer_seg = input('No se digito nada, desea intentarlo de nuevo (Y/N): ')
@@ -150,8 +150,8 @@ def CalC_IMC():
         ''')
     
     message_seg = input('\n Le gusto nuestro Servicio: (Y/N): ')
-    if(tir_seg(message_seg) > 0 or len(message_seg) == 0):
-            while(tir_seg(message_seg) > 0 or len(message_seg) == 0):
+    if(tir_seg(message_seg) > 0 or len(message_seg) == 0 or ('yy' in message_seg) or ('YY' in message_seg) or ('nn' in message_seg) or ('NN' in message_seg)):
+            while(tir_seg(message_seg) > 0 or len(message_seg) == 0 or ('yy' in message_seg) or ('YY' in message_seg) or ('nn' in message_seg) or ('NN' in message_seg)):
                 message_seg = input('Respuesta Incorrecta, ingresela de nuevo: (Y/N): ')
             if(message_seg == 'n' or message_seg == 'N'):
                 print('\n Gracias por su opinión')
@@ -171,4 +171,6 @@ elif(answer == 'n' or answer == 'N'):
 elif(tir_seg(answer) > 0):
     ley_params(answer)
 elif(len(answer) == 0):
+    ley_params(answer)
+elif(('yy' in answer) or ('YY' in answer) or ('nn' in answer) or ('NN' in answer)):
     ley_params(answer)
