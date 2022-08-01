@@ -10,16 +10,37 @@ a = 'ZXCVBNMASDFGHJKLÑQWERTYUIOPzxcvbnmasdfghjklñqwertyuiop '; d = '¨¨+*~[]^
 # su imc y en el caso de que si, al terminar, preguntarle por si gusta calcular otro mas, aunque tambien esta 
 # modificada para el caso de si el usuario ingresa una respuesta invalida
 def ley_params(answer_seg):
+    # Aqui iniciaremos 2 contadores, los cuales cuando llegue el momento de preguntarle al usuario cual fue su satisfacción sobre el pro-
+    # grama, contaran de uno en uno en caso de que el usuario ingrese "N" o "Y"
+    cont = 0; cont_seg = 0
     while(answer_seg == 'y' or answer_seg == 'Y' or len(answer_seg) == 0 or tir_seg(answer_seg) > 0 or ('yy' in answer_seg) or ('YY' in answer_seg) or ('nn' in answer_seg) or ('NN' in answer_seg)):
         if(answer_seg == 'y' or answer_seg == 'Y'):
             CalC_IMC()
+            message_seg = input('\n Le gusto nuestro Servicio: (Y/N): ')
+            while(message_seg != 'y' and message_seg != 'Y' and message_seg != 'n' and message_seg != 'N'):
+                message_seg = input('Respuesta Incorrecta, ingresela de nuevo: (Y/N): ')
+            if(message_seg == 'n' or message_seg == 'N'):
+                print('\n Gracias por su opinión')
+                cont_seg += 1
+            elif(message_seg == 'y' or message_seg == 'Y'):
+                print('\n Gracias por su preferencia')
+                cont += 1
             answer_seg = input('\n Desea calcular otro indice (Y/N): ')
         elif(tir_seg(answer_seg) > 0 or ('yy' in answer_seg) or ('YY' in answer_seg) or ('nn' in answer_seg) or ('NN' in answer_seg)):
             answer_seg = input('Respuesta ¡INCORRECTA!, desea intentarlo de nuevo (Y/N): ')
         elif(len(answer_seg) == 0):
             answer_seg = input('No se digito nada, desea intentarlo de nuevo (Y/N): ')
     else:
-        print('''\n Usted ha llegado al Final del Programa
+        if(cont > cont_seg):
+            conclusión = 'A la gente le gusto mas el programa de lo que no le gusto'
+        elif(cont_seg > cont):
+            conclusión = 'A la gente le desagrado mas el programa de lo que le gusto'
+        else:
+            conclusión = 'A la gente le gusto el programa tanto como no le gusto'
+        print(f'''\n Usted ha llegado al Final del Programa
+\tValoraciones buenas: {cont}
+\tValoraciones malas: {cont_seg} 
+\tConclusión final: {conclusión}
 \n''')
         
 # Esta función fue creada con el proposito de que, ya que como en un principio, explicamos que hay 
@@ -90,6 +111,7 @@ Aqui se encontraría la función principal que como objetivo tiene llamar a las 
 por arriba para usarlas en su correcto orden para lo que es desde el nombre hasta la estatura 
 para aqui mismo calcular el IMC y mostrarlo todo por consola en esta misma funcion ( "CalC_IMC()" )
 '''
+
 def CalC_IMC():
     import math
     '''
@@ -148,25 +170,12 @@ def CalC_IMC():
         \tIndice de Masa Corporal: {imc: .3f}
         \tMensaje de conclusión: {message}
         ''')
-    
-    message_seg = input('\n Le gusto nuestro Servicio: (Y/N): ')
-    if(tir_seg(message_seg) > 0 or len(message_seg) == 0 or ('yy' in message_seg) or ('YY' in message_seg) or ('nn' in message_seg) or ('NN' in message_seg)):
-            while(tir_seg(message_seg) > 0 or len(message_seg) == 0 or ('yy' in message_seg) or ('YY' in message_seg) or ('nn' in message_seg) or ('NN' in message_seg)):
-                message_seg = input('Respuesta Incorrecta, ingresela de nuevo: (Y/N): ')
-            if(message_seg == 'n' or message_seg == 'N'):
-                print('\n Gracias por su opinión')
-            elif(message_seg == 'y' or message_seg == 'Y'):
-                print('\n Gracias por su preferencia')
-    elif(message_seg == 'n' or message_seg == 'N'):
-        print('\n Gracias por su opinión')
-    else:
-        print('\n Gracias por su preferencia')
             
 answer = input('\n Desea calcular su indice de masa corporal (Y/N): ')
 if(answer == 'y' or answer == 'Y'):
     ley_params(answer)
 elif(answer == 'n' or answer == 'N'):
-    print('''\n Usted ha llegado al Final del Programa
+    print('''\n Entonces Usted ya ha llegado al Final del Programa
 \n''')
 elif(tir_seg(answer) > 0):
     ley_params(answer)
