@@ -21,7 +21,8 @@ while(answer != 'n'):
         nombre = validar_respuesta(nombre,'nombre',abecedario)
         apellido_paterno = input('Digite su apellido paterno: ')
         apellido_paterno = validar_respuesta(apellido_paterno,'apellido paterno',abecedario)
-        apellido_materno = input()
+        apellido_materno = input('Digite su apellido materno: ')
+        apellido_materno = validar_respuesta(apellido_materno,'apellido materno',abecedario)
         edad = input('Digite su edad: ')
         edad = validar_respuesta(edad,'edad',numeros)
 
