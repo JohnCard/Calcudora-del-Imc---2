@@ -1,4 +1,3 @@
-print()
 # Variables a utilizar
 si_no = ['n','N','s','S']
 
@@ -22,6 +21,7 @@ while(answer != 'n'):
         nombre = validar_respuesta(nombre,'nombre',abecedario)
         apellido_paterno = input('Digite su apellido paterno: ')
         apellido_paterno = validar_respuesta(apellido_paterno,'apellido paterno',abecedario)
+        apellido_materno = input()
         edad = input('Digite su edad: ')
         edad = validar_respuesta(edad,'edad',numeros)
 
