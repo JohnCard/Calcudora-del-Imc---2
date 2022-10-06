@@ -1,3 +1,4 @@
+import string
 rb = 'ZXCVBMASDFGHJKLÑQWERTUIOP¨¨+*~[]^``/|¬°!"#$%&()=-_;:,zxcvbmasdfghjklñqwertuiop 1234567890.'
 def leer_params(pirm, let):
     ty = 0
@@ -33,3 +34,4 @@ elif(tir_seg(nom) > 0 or len(nom) == 0):
     else:
         print('El gran Final')
         
+print(string.ascii_lowercase)
