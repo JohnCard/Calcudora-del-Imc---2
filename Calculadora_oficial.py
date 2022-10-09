@@ -1,7 +1,7 @@
 # Variables a utilizar
-si_no = ['n','N','s','S']
+si_no = 'snSN'
 
-abecedario = ' abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'
+abecedario = 'abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'
 
 numeros = '1234567890'
 
@@ -27,7 +27,7 @@ def validar_respuesta(answer,tipo_variable,lista_variables):
     es algo largo, y si pide una edad, solo se pueden digitar numeros.
     '''
     while((recorrer_cadena(answer,lista_variables) > 0) or (evaluar_variable(answer,'.') > 1) or (evaluar_variable(answer,' ') > 1)):
-        answer = input(f'Su {tipo_variable} {answer} ¡ES INVÁLIDA!, favor de intentarlo de nuevo ({lista_variables}): ')
+        answer = input(f'Su {tipo_variable} {answer} ¡ES INVÁLIDO!, favor de intentarlo de nuevo: ')
 # Función para verificar que un determinado parametro no se repita mas de una vez en una cadena:
 def evaluar_variable(cadena,variable):
     '''
@@ -48,6 +48,8 @@ def evaluar_variable(cadena,variable):
 print('''
 Se bienvenido al programa que te permite calcular tu Índeice de Masa Corporal 😁😎😝👦
 ''')
+# le asignamos un valor a "answer" para que en el while de la linea 53 no lanze un ¡ERROR!
+answer = 's'
 while(answer != 'n'):
     # answer = input('Para empezar, esta usted interesado en conocer su IMC?, si desea salir del programa, solo debe oprimir "N": ')
     # answer = validar_respuesta(answer)
@@ -76,6 +78,6 @@ while(answer != 'n'):
         Estatura: {estatura}
         Índice de masa corporral: {imc}
         ''')
-    print('Digite un 1 para continuar en el programa o un 2 para salir del programa! ')
-    answer = input('Desea salir ya del programa?, o desea calcular otro indice de masa corporal? ')
+    print('Digite un s para continuar en el programa o un n para salir del programa! ')
+    answer = input('Desea salir ya del programa?, o desea calcular otro indice de masa corporal (S/N)? ')
     
